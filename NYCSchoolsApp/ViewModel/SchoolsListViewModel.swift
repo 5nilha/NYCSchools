@@ -11,11 +11,19 @@ import UIKit
 protocol SchoolsListDelegates {
     func didUpdate()
     func didSelectSchool(school: SchoolViewModel)
+    func updateSchools(schoolList: [SchoolViewModel]?)
+    static var schools: [SchoolViewModel] { get }
+}
+
+extension SchoolsListDelegates {
+    func updateSchools(schoolList: [SchoolViewModel]?){}
+    func didUpdate(){}
+    static var schools: [SchoolViewModel] { return [SchoolViewModel]()}
 }
 
 class SchoolsListViewModel: NSObject {
     private var schoolsListDic = Dictionary<String, [SchoolViewModel]>()
-    private var schoolList = [SchoolViewModel]()
+    static var schoolList = [SchoolViewModel]()
     private var schoolSections = [String]()
     
     var delegate: SchoolsListDelegates!
@@ -24,19 +32,18 @@ class SchoolsListViewModel: NSObject {
         super.init()
         
         Webservices.fecthSchools { [weak self] (data) in
-            self?.schoolList.removeAll()
+            SchoolsListViewModel.schoolList.removeAll()
             guard let data = data else { return }
             for dataJson in data {
                 if let dataJson = dataJson {
                     let schoolVM = SchoolViewModel(data: dataJson)
-                    if let schoolVM = schoolVM {
-                        self?.schoolList.append(schoolVM)
+                    if !schoolVM.schoolName.isEmpty {
+                        SchoolsListViewModel.schoolList.append(schoolVM)
                     }
                 }
             }
             
-            self?.schoolsListDic = Dictionary(grouping: self!.schoolList) { (element) -> String in
-                print(element.section)
+            self?.schoolsListDic = Dictionary(grouping: SchoolsListViewModel.schoolList) { (element) -> String in
                 return "\(element.section)"
             }
             
@@ -46,10 +53,12 @@ class SchoolsListViewModel: NSObject {
             }))!
             self?.schoolSections.sort()
 
-            
             DispatchQueue.main.async {
+                print("OUTSIDE DELEGATE")
                 if self?.delegate != nil {
+                    print("INSIDE DELEGATE")
                     self?.delegate.didUpdate()
+                    self?.delegate.updateSchools(schoolList: SchoolsListViewModel.schoolList)
                 }
             }
         }

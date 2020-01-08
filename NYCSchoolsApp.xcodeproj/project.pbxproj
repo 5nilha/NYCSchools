@@ -18,6 +18,8 @@
 		3E67E25123C3DAA000FF3AD3 /* SchoolsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67E25023C3DAA000FF3AD3 /* SchoolsListViewModel.swift */; };
 		3E67E25523C436E400FF3AD3 /* SchoolsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67E25423C436E400FF3AD3 /* SchoolsListViewController.swift */; };
 		3E67E25923C43E2300FF3AD3 /* SchoolListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67E25823C43E2300FF3AD3 /* SchoolListCell.swift */; };
+		3E67E25B23C4FCE100FF3AD3 /* SchoolsMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67E25A23C4FCE100FF3AD3 /* SchoolsMapViewModel.swift */; };
+		3E67E25D23C535A200FF3AD3 /* SchoolsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E67E25C23C535A200FF3AD3 /* SchoolsMapViewController.swift */; };
 		A8635920CC7479E09923A834 /* Pods_NYCSchoolsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0D3B4A341A45C50E5F5CEF /* Pods_NYCSchoolsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		3E67E25023C3DAA000FF3AD3 /* SchoolsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsListViewModel.swift; sourceTree = "<group>"; };
 		3E67E25423C436E400FF3AD3 /* SchoolsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsListViewController.swift; sourceTree = "<group>"; };
 		3E67E25823C43E2300FF3AD3 /* SchoolListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolListCell.swift; sourceTree = "<group>"; };
+		3E67E25A23C4FCE100FF3AD3 /* SchoolsMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsMapViewModel.swift; sourceTree = "<group>"; };
+		3E67E25C23C535A200FF3AD3 /* SchoolsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsMapViewController.swift; sourceTree = "<group>"; };
 		7E0D3B4A341A45C50E5F5CEF /* Pods_NYCSchoolsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NYCSchoolsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -108,6 +112,7 @@
 			children = (
 				3E67E24E23C3D6A600FF3AD3 /* SchoolViewModel.swift */,
 				3E67E25023C3DAA000FF3AD3 /* SchoolsListViewModel.swift */,
+				3E67E25A23C4FCE100FF3AD3 /* SchoolsMapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				3E67E25423C436E400FF3AD3 /* SchoolsListViewController.swift */,
+				3E67E25C23C535A200FF3AD3 /* SchoolsMapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -272,11 +278,13 @@
 				3E67E25123C3DAA000FF3AD3 /* SchoolsListViewModel.swift in Sources */,
 				3E67E23323C3CE1600FF3AD3 /* AppDelegate.swift in Sources */,
 				3E67E24F23C3D6A600FF3AD3 /* SchoolViewModel.swift in Sources */,
+				3E67E25D23C535A200FF3AD3 /* SchoolsMapViewController.swift in Sources */,
 				3E67E25923C43E2300FF3AD3 /* SchoolListCell.swift in Sources */,
 				3E67E24B23C3CEC100FF3AD3 /* School.swift in Sources */,
 				3E67E24D23C3D29D00FF3AD3 /* WebServices.swift in Sources */,
 				3E67E25523C436E400FF3AD3 /* SchoolsListViewController.swift in Sources */,
 				3E67E23523C3CE1600FF3AD3 /* SceneDelegate.swift in Sources */,
+				3E67E25B23C4FCE100FF3AD3 /* SchoolsMapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

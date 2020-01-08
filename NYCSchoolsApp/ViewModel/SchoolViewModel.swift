@@ -12,7 +12,7 @@ struct SchoolViewModel {
     
     let school: School!
     
-    init?(data: [String : Any]) {
+    init(data: [String : Any]) {
         self.school = School(dataJSON: data)
     }
     

@@ -12,6 +12,7 @@ class SchoolsListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    
     var schoolsListViewModel: SchoolsListViewModel!
 
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class SchoolsListViewController: UIViewController {
         self.schoolsListViewModel.delegate = self
         self.tableView.delegate = schoolsListViewModel
         self.tableView.dataSource = schoolsListViewModel
+        self.navigationItem.title = "Schools List"
     }
     
 

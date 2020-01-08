@@ -92,6 +92,36 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="845.75892857142856"/>
         </scene>
+        <!--Schools Map View Controller-->
+        <scene sceneID="uen-eK-EVF">
+            <objects>
+                <viewController id="bwR-1C-we7" customClass="SchoolsMapViewController" customModule="NYCSchoolsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cLn-t4-cyB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9k3-Ux-u06">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="9k3-Ux-u06" firstAttribute="trailing" secondItem="kg0-Dl-c7F" secondAttribute="trailing" id="47o-8m-18P"/>
+                            <constraint firstItem="9k3-Ux-u06" firstAttribute="top" secondItem="kg0-Dl-c7F" secondAttribute="top" id="BMU-3E-vMf"/>
+                            <constraint firstItem="9k3-Ux-u06" firstAttribute="leading" secondItem="kg0-Dl-c7F" secondAttribute="leading" id="OAO-3J-x8Q"/>
+                            <constraint firstItem="9k3-Ux-u06" firstAttribute="bottom" secondItem="kg0-Dl-c7F" secondAttribute="bottom" id="Peg-Zj-bkm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kg0-Dl-c7F"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PcC-T0-zCv"/>
+                    <connections>
+                        <outlet property="mapView" destination="9k3-Ux-u06" id="dUX-L0-khb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sDV-CH-Vfq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1882.608695652174" y="137.94642857142856"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VD2-ez-JKx">
             <objects>
@@ -100,10 +130,14 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uYm-j1-mhz">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.16940061209999999" green="0.65608616070000003" blue="0.29541533510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="xqj-Jc-sDh" kind="relationship" relationship="viewControllers" id="05p-UD-hCA"/>
+                        <segue destination="MNq-va-GoC" kind="relationship" relationship="viewControllers" id="jfg-fA-Oeq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbW-2v-1e3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -119,6 +153,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fRc-Zw-kof">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.16940061209999999" green="0.65608616070000003" blue="0.29541533510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -129,8 +164,29 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="845.75892857142856"/>
         </scene>
+        <!--Schools Map-->
+        <scene sceneID="s4j-N9-2vg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MNq-va-GoC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schools Map" image="mappin.and.ellipse" catalog="system" id="4uI-P4-119"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xj8-Xs-los">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.16940061209999999" green="0.65608616070000003" blue="0.29541533510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bwR-1C-we7" kind="relationship" relationship="rootViewController" id="ren-rV-2Pg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qGX-wf-B4z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="138"/>
+        </scene>
     </scenes>
     <resources>
         <image name="book.fill" catalog="system" width="64" height="50"/>
+        <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
     </resources>
 </document>
